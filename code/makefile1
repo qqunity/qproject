@@ -1,0 +1,16 @@
+all: program2
+
+program2: main.o hello.o
+	gcc main.o hello.o -o program2
+
+main.o: main.c
+	gcc -c main.c
+
+hello.o: hello.c
+	gcc -c hello.c
+
+cleanl:
+	rm -rf *.o program2
+
+cleanw:
+	del *.o program2.exe

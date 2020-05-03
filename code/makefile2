@@ -1,0 +1,19 @@
+CMD=gcc
+CFLAGS=-c
+EXECUTABLE=program2
+SOURCES=main.c hello.c
+OBJECTS=main.o hello.o
+
+all: $(SOURCE) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CMD) $(OBJECTS) -o $@
+
+%.o: %.c
+	$(CMD) $(CFLAGS) $<
+
+cleanl:
+	rm -rf $(OBJECTS) $(EXECUTABLE)
+
+cleanw:
+	del $(OBJECTS) $(EXECUTABLE) 
